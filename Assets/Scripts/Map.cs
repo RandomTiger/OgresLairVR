@@ -6,6 +6,11 @@ using System.IO;
 
 public class Point2
 {
+    public Point2()
+    {
+        X = Y = 0;
+    }
+
     public Point2(int x, int y)
     {
         X = x;
@@ -337,8 +342,13 @@ namespace OgresLair.Game
                     switch(tileType)
                     {
                         case TileType.WALL:
+                        case TileType.BREAKABLE_RED:
+                        case TileType.BREAKABLE_YELLOW:
+                        case TileType.USABLE_BOLDER:
+                        case TileType.DOOR_VERTICAL:
+                        case TileType.DOOR_HORIZONTAL:
                             {
-                                Instantiate(Prefabs[(int)TileType.WALL], new Vector3(x, 0, y), Quaternion.identity, transform);
+                                Instantiate(Prefabs[(int)tileType], new Vector3(x, 0, y), Quaternion.identity, transform);
                             }
                             break;
                     }
@@ -435,6 +445,11 @@ namespace OgresLair.Game
         public int getNumTilesHigh()
         {
             return m_numTilesHigh;
+        }
+
+        public float getTileWidth()
+        {
+            return 1;
         }
 
         public int getMapTile(int _x, int _y)
