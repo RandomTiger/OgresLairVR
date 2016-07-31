@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(SteamVR_TrackedObject))]
@@ -22,6 +23,7 @@ public class SteamVR_TestThrow : MonoBehaviour
 		{
 			var go = GameObject.Instantiate(prefab);
 			go.transform.position = attachPoint.transform.position;
+            go.transform.rotation = attachPoint.transform.rotation;
 
 			joint = go.AddComponent<FixedJoint>();
 			joint.connectedBody = attachPoint;
@@ -32,7 +34,7 @@ public class SteamVR_TestThrow : MonoBehaviour
 			var rigidbody = go.GetComponent<Rigidbody>();
 			Object.DestroyImmediate(joint);
 			joint = null;
-			Object.Destroy(go, 15.0f);
+			//Object.Destroy(go, 15.0f);
 
 			// We should probably apply the offset between trackedObj.transform.position
 			// and device.transform.pos to insert into the physics sim at the correct

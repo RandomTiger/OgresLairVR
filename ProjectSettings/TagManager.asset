@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - IgnoreVRArcRaycast
-  - 
-  - 
+  - Throwable
+  - Hand
   - 
   - 
   - 

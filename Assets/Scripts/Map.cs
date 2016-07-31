@@ -344,6 +344,7 @@ namespace OgresLair.Game
                         case TileType.WALL:
                         case TileType.BREAKABLE_RED:
                         case TileType.BREAKABLE_YELLOW:
+                        case TileType.BREAKABLE_WALL:
                         case TileType.USABLE_BOLDER:
                         case TileType.DOOR_VERTICAL:
                         case TileType.DOOR_HORIZONTAL:
